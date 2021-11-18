@@ -1,0 +1,16 @@
+<div class="container-bg">
+  <div class="container">
+    <h1 class='text-left'>Restaurants</h1>
+    <%= link_to 'Add a new Restaurant', new_restaurant_path, class: 'btn btn-sm btn-success mb-5' %>
+    <% @restaurants.each do |restaurant| %>
+      <%= link_to restaurant_path(restaurant), class: 'text-decoration-none text-success' do %>
+        <div class="card text-white bg-success mb-3">
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+          <p><strong><%= restaurant.category%></strong></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
